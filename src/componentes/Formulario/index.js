@@ -13,11 +13,13 @@ const Formulario = (props) => {
 
     const aoSalvar = (event) => {
         event.preventDefault();
+
+        const imagemPerfil = imagem === '' || imagem.length < 5 ? '../imagens/imgperfil.png' : imagem;
         
         props.aoColaboradorCadastrado({
             nome,
             cargo,
-            imagem,
+            imagem: imagemPerfil,
             time
         });
         setNome('')
